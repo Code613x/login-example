@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enable MFA</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/mfa_activation.css') }}">
+</head>
+<body>
+<button id="cancelBtn">Cancel</button>
+<div class="mfa-wrapper">
+    <div class="mfa-card">
+        <h1>Enable Multi-Factor Authentication</h1>
+        <p class="subtitle">
+            Scan the QR code with your authenticator app, then enter the code below 
+            along with your password to enable MFA.
+        </p>
+
+        <div class="mfa-grid">
+            <div class="mfa-left">
+                <div id="qr-container">
+                    <img id="qr" src="" alt="Scan QR code">
+                </div>
+                <p class="qr-info">Use Google Authenticator or a similar app.</p>
+            </div>
+
+            <div class="mfa-right">
+                <input type="text" id="mfa-code" placeholder="6-digit code from app" maxlength="6" autocomplete="off" required>
+                <input type="password" id="mfa-password" placeholder="Your password" required>
+                <button id="activate-btn">Activate MFA</button>
+                <div id="msg"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="{{ url_for('static', filename='js/fetch.js') }}"></script>
+<script src="{{ url_for('static', filename='js/alertbox.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/mfa_activation.js') }}"></script>
+</body>
+</html>

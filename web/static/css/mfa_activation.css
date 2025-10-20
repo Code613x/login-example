@@ -1,0 +1,170 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* TŁO */
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* GŁÓWNY WRAPPER */
+.mfa-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* KARTA MFA */
+.mfa-card {
+    background-color: #fff;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    max-width: 850px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.7s ease-in-out;
+    transition: transform 0.3s;
+}
+
+.mfa-card:hover {
+    transform: translateY(-5px);
+}
+
+.mfa-card h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+/* GRID: QR i formularz */
+.mfa-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* QR */
+.mfa-left {
+    flex: 1;
+    text-align: center;
+}
+
+#qr-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px dashed #ccc;
+}
+
+#qr {
+    width: 220px;
+    height: 220px;
+    border-radius: 12px;
+}
+
+.qr-info {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* FORMULARZ */
+.mfa-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.mfa-right input {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    border: 1.5px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.mfa-right input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0,123,255,0.2);
+    outline: none;
+}
+
+.mfa-right button {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mfa-right button:hover {
+    background: linear-gradient(45deg, #0056b3, #008cff);
+    transform: scale(1.05);
+}
+
+#cancelBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+}
+
+#msg {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .mfa-grid {
+        flex-direction: column;
+        gap: 35px;
+    }
+    #qr {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}

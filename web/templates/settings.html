@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
+</head>
+<body>
+<button id="homeBtn">Home</button>
+<div class="settings-wrapper">
+
+    <header class="settings-header">
+        <h1>Account Settings</h1>
+    </header>
+
+    <div class="settings-card">
+        <h2>Change Username</h2>
+        <form id="usernameForm">
+            <input type="text" id="newUsername" placeholder="New Username" autocomplete="off" maxlength="50" required>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    <div class="settings-card">
+        <h2>Change Email</h2>
+        <form id="emailForm">
+            <input type="email" id="newEmail" placeholder="New Email" autocomplete="off" maxlength="255" required>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    <div class="settings-card">
+        <h2>Change Password</h2>
+        <form id="passwordChangeForm">
+            <input type="password" id="currentPassword" placeholder="Current Password" required>
+            <input type="password" id="newPassword" placeholder="New Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm New Password" autocomplete="off" required>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    <div class="settings-card">
+        <h2>Two-Factor Authentication (2FA)</h2>
+        <form id="2faForm">
+            <label>
+                <input type="radio" name="2faOption" value="disable"> Disabled
+            </label>
+            <label>
+                <input type="radio" name="2faOption" value="mfa"> Enabled
+            </label>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    <div id="passwordOverlay">
+        <form id="passwordForm">
+            <h3 id="passwordText">Password Verification</h3>
+            <input type="password" id="password" autocomplete="off" placeholder="Password" required>
+            <button type="submit" id="captchaSubmitBtn">Submit</button>
+        </form>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="{{ url_for('static', filename='js/fetch.js') }}"></script>
+<script src="{{ url_for('static', filename='js/logout.js') }}"></script>
+<script src="{{ url_for('static', filename='js/alertbox.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+</body>
+</html>

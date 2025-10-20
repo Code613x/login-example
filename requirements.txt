@@ -1,0 +1,10 @@
+flask
+pyotp
+qrcode[pil]
+mysql-connector-python
+argon2-cffi
+PyJWT
+Flask-Limiter
+redis
+requests
+resend

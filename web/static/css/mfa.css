@@ -1,0 +1,109 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* TŁO */
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* WRAPPER */
+.mfa-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* KARTA MFA */
+.mfa-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 50px 45px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    animation: fadeIn 0.7s ease-in-out;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mfa-card:hover {
+    transform: translateY(-5px);
+}
+
+.mfa-card h1 {
+    font-size: 1.9rem;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+/* INPUT */
+.mfa-card input {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 1.5px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.mfa-card input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0,123,255,0.2);
+    outline: none;
+}
+
+.mfa-card button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mfa-card button:hover {
+    background: linear-gradient(45deg, #0056b3, #008cff);
+    transform: scale(1.05);
+}
+
+#cancelBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .mfa-card {
+        width: 90%;
+    }
+}

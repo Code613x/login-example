@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login / Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+<div class="login-wrapper">
+
+    <div class="login-card">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email" maxlength="32" required>
+            <input type="password" id="loginPassword" placeholder="Password" maxlength="32" required>
+            <p id="reset-text">Reset Password</p>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="login-card">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <input type="email" id="regEmail" placeholder="Email" maxlength="32" required>
+            <input type="text" id="regUsername" placeholder="Username" maxlength="16" autocomplete="off" required>
+            <input type="password" id="regPassword" placeholder="Password" maxlength="32" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <div id="captchaOverlay">
+        <form id="captchaForm">
+            <h3>CAPTCHA</h3>
+            <img id="captchaImage" alt="captcha">
+            <input type="text" id="captchaInput" autocomplete="off" placeholder="Enter CAPTCHA" maxlength="2" required>
+            <button type="submit" id="captchaSubmitBtn">Submit</button>
+        </form>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="{{ url_for('static', filename='js/alertbox.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fetch.js') }}"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

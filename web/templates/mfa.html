@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MFA Verification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mfa.css') }}">
+</head>
+<button id="cancelBtn">Cancel</button>
+<body>
+    <div class="mfa-wrapper">
+        <div class="mfa-card">
+            <h1>MFA Verification</h1>
+            <form id="mfaForm">
+                <input type="text" id="mfaCode" placeholder="Enter MFA code" autocomplete="off" autofocus maxlength="6" pattern="\d{6}" required>
+                <button type="submit" id="submit-btn">Verify</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/fetch.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/alertbox.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/mfa.js') }}"></script>
+</body>
+</html>
