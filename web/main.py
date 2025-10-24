@@ -13,19 +13,20 @@ from redis import Redis
 from email_api import send_password_reset
 from functools import wraps
 import random
+import os
 
 app = Flask(__name__)
 
-r = Redis(host='localhost', port=6379, db=3)
+r = Redis(host=os.environ.get("url", "localhost"), port=6379, db=3)
 
 limiter = Limiter(
     key_func=get_remote_address,
-    storage_uri="redis://localhost:6379/0",
+    storage_uri=f"redis://{os.environ.get("url")}:6379/0",
     app=app,
     default_limits=["120 per minute"]
 )
 
-SECRET_KEY = "secret"
+SECRET_KEY = os.environ.get("captcha_secret")
 
 def set_tokens_response(resp, access_token=None, refresh_token=None,
                         access_exp=30*60, refresh_exp=7*24*60*60,
@@ -474,4 +475,4 @@ def reset_password():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run(host="127.0.0.1", port=5000, debug=False)

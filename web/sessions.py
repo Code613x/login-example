@@ -1,20 +1,16 @@
-from DBManager import (
-    VerifyLogin, Getuser_role, SaveRefreshToken, GetUsername,
-    CreateUser, LockRefreshToken, LockRefreshTokens, CheckRefreshToken,
-    init_mfa, verify_mfa
-)
+from DBManager import VerifyLogin, Getuser_role, SaveRefreshToken, GetUsername,CreateUser, LockRefreshToken, LockRefreshTokens, CheckRefreshToken,init_mfa, verify_mfa
 from datetime import datetime, timedelta
 import jwt
 import uuid
 from argon2 import PasswordHasher
 from hashlib import sha256
 import re
-
+import os
 ph = PasswordHasher()
 
-SECRET_KEY = "secret"
-REFRESH_SECRET_KEY = "refresh_secret"
-TEMP_SECRET = "temp_secret_key"
+SECRET_KEY = os.environ.get("acces_secret")
+REFRESH_SECRET_KEY = os.environ.get("refresh_secret")
+TEMP_SECRET = os.environ.get("temp_secret")
 
 def is_valid_email(email: str) -> bool:
     return re.match(r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$", email) is not None

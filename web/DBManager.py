@@ -5,16 +5,16 @@ import qrcode
 import io
 import base64
 import json
-import time
+import os
 ph = PasswordHasher()
 
 def get_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="login",
-        port=3306
+        host=os.environ.get("db_url"),
+        user=os.environ.get("db_user"),
+        password=  os.environ.get("db_password"),
+        database= os.environ.get("db_name"),
+        port=int(os.environ.get("db_port", 0))
     )
 
 def VerifyLogin(email, password):

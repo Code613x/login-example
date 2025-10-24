@@ -33,9 +33,9 @@ def generate_captcha():
         draw.line([(x1, y1), (x2, y2)], fill=line_color, width=2)
 
     buf = BytesIO()
-    img.save(buf, format="PNG")
+    img.save(buf, format="WebP", quality=75, method=6)
     buf.seek(0)
     img_bytes = buf.read()
-    img_base64 = "data:image/png;base64," + base64.b64encode(img_bytes).decode("utf-8")
+    img_base64 = "data:image/webp;base64," + base64.b64encode(img_bytes).decode("utf-8")
 
     return answer, img_base64
