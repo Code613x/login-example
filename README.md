@@ -84,7 +84,4 @@ REDIS_PORT=6379
 python app.py
 ```
 
-The backend will start at `http://localhost:5000`.
-
-```
-```
+Website will start at `http://localhost:5000/`.
