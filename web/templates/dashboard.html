@@ -1,93 +1,97 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-<div class="dashboard-wrapper">
-    <header class="dashboard-header">
-        <h1>Dashboard</h1>
-        <div class="header-buttons">
-            <button id="settings">Settings</button>
-            <button id="logoutBtn">Logout</button>
-        </div>
-    </header>
+    <div class="dashboard-wrapper">
+        <header class="dashboard-header">
+            <h1>Dashboard</h1>
+            <div class="header-buttons">
+                <button id="settings">Settings</button>
+                <button id="logoutBtn">Logout</button>
+            </div>
+        </header>
 
-    <section class="stats-section">
-        <div class="stat-card">
-            <h3>Projects</h3>
-            <p>12</p>
-        </div>
-        <div class="stat-card">
-            <h3>Repositories</h3>
-            <p>8</p>
-        </div>
-        <div class="stat-card">
-            <h3>Experience</h3>
-            <p id="experience"></p>
-        </div>
-    </section>
-    
-    <section class="projects-section">
-        <div class="project-card">
-            <h3>Portfolio Website</h3>
-            <p>Fullstack app with Flask</p>
-            <span>Python, Flask, JS, HTML, CSS</span>
-            <a href="https://github.com/username/portfolio" target="_blank">View Repo</a>
-        </div>
-        <div class="project-card">
-            <h3>MFA Authentication</h3>
-            <p>Secure login system with MFA</p>
-            <span>Python, Flask, JS, CSS</span>
-            <a href="https://github.com/username/mfa" target="_blank">View Repo</a>
-        </div>
-    </section>
+        <section class="stats-section">
+            <div class="stat-card">
+                <h3>Projects</h3>
+                <p>12</p>
+            </div>
+            <div class="stat-card">
+                <h3>Repositories</h3>
+                <p>8</p>
+            </div>
+            <div class="stat-card">
+                <h3>Experience</h3>
+                <p id="experience"></p>
+            </div>
+        </section>
 
-    <section class="project-info">
-        <h2>About This Project</h2>
-        <p>This is a fullstack portfolio application demonstrating my skills in both frontend and backend development, 
-           including secure authentication, project showcase, and dashboard analytics.</p>
-        <h3>Technologies Used:</h3>
-        <ul>
-            <li>Frontend: HTML, CSS, JavaScript</li>
-            <li>Backend: Python, Flask</li>
-            <li>Database: MySQL / MariaDB</li>
-            <li>Security: JWT, MFA, Argon2</li>
-        </ul>
-        <h3>My Contributions:</h3>
-        <ul>
-            <li>Designed responsive frontend UI</li>
-            <li>Implemented secure backend authentication with MFA</li>
-            <li>Created interactive dashboard with analytics</li>
-        </ul>
-    </section>
+        <section class="projects-section">
+            <div class="project-card">
+                <h3>GitHub Portfolio</h3>
+                <p>A showcase of my projects and coding experiments</p>
+                <span>C#, Python, Flask, JS, HTML, CSS</span>
+                <a href="https://github.com/Code613x/" target="_blank">View Profile</a>
+            </div>
+            <div class="project-card">
+                <h3>This project</h3>
+                <p>Secure login system with MFA</p>
+                <span>Python, Flask, JS, CSS, HTML</span>
+                <a href="https://github.com/Code613x/login-example/x" target="_blank">View Repo</a>
+            </div>
+        </section>
 
-    <section class="skills-chart-section">
-        <canvas id="skillsChart"></canvas>
-    </section>
+        <section class="project-info">
+            <h2>About This Project</h2>
+            <p>This is a fullstack portfolio application demonstrating my skills in both frontend and backend
+                development,
+                including secure authentication, project showcase, and dashboard analytics.</p>
+            <h3>Technologies Used:</h3>
+            <ul>
+                <li>Frontend: HTML, CSS, JavaScript</li>
+                <li>Backend: Python, Flask</li>
+                <li>Database: MySQL / MariaDB</li>
+                <li>Security: JWT, MFA, Argon2</li>
+            </ul>
+            <h3>My Contributions:</h3>
+            <ul>
+                <li>Designed responsive frontend UI</li>
+                <li>Implemented secure backend authentication with MFA</li>
+                <li>Created interactive dashboard with analytics</li>
+            </ul>
+        </section>
 
-</div>
+        <section class="skills-chart-section">
+            <canvas id="skillsChart"></canvas>
+        </section>
 
-<script src="{{ url_for('static', filename='js/fetch.js') }}"></script>
-<script src="{{ url_for('static', filename='js/logout.js') }}"></script>
-<script src="{{ url_for('static', filename='js/app.js') }}"></script>
-<script>
-const ctx = document.getElementById('skillsChart').getContext('2d');
-const skillsChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Python', 'JS', 'Flask', 'HTML', 'CSS'],
-        datasets: [{
-            label: 'Skill Level',
-            data: [90, 85, 80, 60, 50],
-            backgroundColor: '#007bff'
-        }]
-    },
-    options: { scales: { y: { beginAtZero: true, max: 100 } } }
-});
-</script>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/fetch.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/logout.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script>
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Python', 'JS', 'Flask', 'HTML', 'CSS'],
+                datasets: [{
+                    label: 'Skill Level',
+                    data: [90, 85, 80, 60, 50],
+                    backgroundColor: '#007bff'
+                }]
+            },
+            options: { scales: { y: { beginAtZero: true, max: 100 } } }
+        });
+    </script>
 </body>
+
 </html>
