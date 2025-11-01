@@ -81,7 +81,7 @@ REDIS_PORT=6379
 ### 5️⃣ Run the Backend
 
 ```bash
-python app.py
+python main.py
 ```
 
 Website will start at `http://localhost:5000/`.
