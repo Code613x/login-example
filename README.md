@@ -78,7 +78,7 @@ REDIS_HOST=localhost
 REDIS_PORT=6379
 ```
 
-### 5️⃣ Run the Backend
+### 5️⃣ Run the Website
 
 ```bash
 python main.py
