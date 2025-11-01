@@ -1,4 +1,3 @@
-````markdown
 # Secure Login System with JWT
 
 **Short description:**  
@@ -38,11 +37,9 @@
 
 ### 1️⃣ Setup Repository
 
-```bash
 git clone https://github.com/Code613x/login-example.git
 cd login-example/web
 pip install -r requirements.txt
-````
 
 ### 2️⃣ Set up Redis
 
