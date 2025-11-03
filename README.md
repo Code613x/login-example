@@ -71,17 +71,23 @@ Make sure Redis is running on the default port `6379`.
 Create a `.env` file in the project root with these variables:
 
 ```
-SECRET_KEY=<your-secret-key>
-JWT_SECRET_KEY=<your-jwt-secret>
-DATABASE_URL=mysql+pymysql://<user>:<password>@localhost/<database_name>
-REDIS_HOST=localhost
-REDIS_PORT=6379
+url="localhost"
+db_url="localhost"
+db_user="root"
+db_password=""
+db_name="login"
+db_port="3306"
+email_api_key=""
+temp_secret="TempSecret"
+captcha_secret="CaptchaSecret"
+refresh_secret="RefreshSecret"
+acces_secret="AccesSecret"
 ```
 
 ### 5️⃣ Run the Website
 
 ```bash
-python main.py
+python3 main.py
 ```
 
 Website will start at `http://localhost:5000/`.
